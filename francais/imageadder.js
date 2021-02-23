@@ -17,8 +17,9 @@ function placeImage(x, y) {
   img.style.transform =
     'translate(-50%, -50%) scale(0.6) rotate(' + (Math.random() * 10 - 5) + 'deg)'
 
-  document.querySelector("section.collage").appendChild(img)
-  //   document.body.appendChild(img)
+    //pour selectionner une seule partie de l'ecran pour reagir 
+  //document.querySelector("class").appendChild(img)
+    document.body.appendChild(img)
 
   i = i + 1
   if (i >= images.length) {
@@ -27,7 +28,8 @@ function placeImage(x, y) {
 }
 let mouse=0
 
-document.querySelector("section.collage").addEventListener('mousemove', function (event) {
+document.body.addEventListener('mousemove', function (event) {
+  //click au lieu de mouvement de souris
   // document.addEventListener('click', function(event) {
   event.preventDefault()
   mouse =mouse + 1 
@@ -36,8 +38,9 @@ document.querySelector("section.collage").addEventListener('mousemove', function
   }
 })
 
-document.addEventListener('touchend', function (event) {
-  event.preventDefault()
-  placeImage(event.pageX, event.pageY)
+//piste pour effet sur mobile
+ document.addEventListener('touchend', function (event) {
+ event.preventDefault()
+ placeImage(event.pageX, event.pageY)
 })
 
