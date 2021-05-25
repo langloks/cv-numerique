@@ -17,7 +17,7 @@ function placeImage(x, y) {
   img.style.transform =
     'translate(-50%, -50%) scale(0.6) rotate(' + (Math.random() * 10 - 5) + 'deg)'
 
-  document.querySelector("section.collage").appendChild(img)
+  document.querySelector("body").appendChild(img)
   //   document.body.appendChild(img)
 
   i = i + 1
@@ -27,7 +27,7 @@ function placeImage(x, y) {
 }
 let mouse=0
 
-document.querySelector("section.collage").addEventListener('mousemove', function (event) {
+document.querySelector("body").addEventListener('mousemove', function (event) {
   // document.addEventListener('click', function(event) {
   event.preventDefault()
   mouse =mouse + 1 
